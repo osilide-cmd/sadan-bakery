@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sadan Bakery</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+    @font-face{font-family:XBShafigh;src:url("fonts/XBShafigh.ttf") format("truetype");font-display:swap}
+    @font-face{font-family:ElegantEnglish;src:url("fonts/ElegantEnglishFont.ttf") format("truetype");font-display:swap}
+    @font-face{font-family:SaudiRiyal;src:url("fonts/SaudiRiyal.woff2") format("woff2");font-display:swap}
+    @font-face{font-family:NotoKufiArabic;src:url("fonts/NotoKufiArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+    @font-face{font-family:NotoKufiArabic;src:url("fonts/NotoKufiArabic-SemiBold.ttf") format("truetype");font-weight:600;font-display:swap}
+    @font-face{font-family:NotoKufiArabic;src:url("fonts/NotoKufiArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+    :root{--maroon:#590019;--maroon-deep:#3b0010;--cream:#fff2d0;--white:#fff;--ink:#2e1019;--muted:#765b60;--line:#e7ccbc}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:var(--ink);line-height:1.7}
+    :lang(ar){font-family:NotoKufiArabic,Arial,sans-serif}
+    :lang(en){font-family:Arial,Helvetica,sans-serif}
+    a{text-decoration:none;color:inherit}
+    .english,.brand,.eyebrow,.footer-brand{font-family:ElegantEnglish,serif}
+    .brand,html[lang="ar"] .brand{font-family:XBShafigh,serif;letter-spacing:0}
+    .heading h1,.title h2{font-family:XBShafigh,serif}
+    .name{font-family:XBShafigh,serif}
+    .riyal-symbol{font-family:SaudiRiyal!important;font-weight:400;display:inline-block;line-height:1;font-size:1.55em;vertical-align:-.18em}
+    html[lang="en"]{direction:ltr}
+    html[lang="en"] .heading h1,html[lang="en"] .title h2,html[lang="en"] .name{font-family:ElegantEnglish,serif}html[lang="en"] .brand{letter-spacing:0}
+    html[lang="en"] .name{font-weight:900;-webkit-text-stroke:.35px currentColor}
+    html[lang="en"] .desc,html[lang="en"] .price{font-family:Arial,Helvetica,sans-serif}
+    .hero{min-height:62vh;display:grid;place-items:center;text-align:center;padding:64px 20px;color:var(--cream);background:linear-gradient(rgba(89,0,25,.74),rgba(89,0,25,.88)),url("images/dough.jpg") center/cover no-repeat;position:relative;overflow:hidden}
+    .hero:before,.hero:after{content:"";position:absolute;border:1px solid #fff2d066;border-radius:50%}
+    .hero:before{width:520px;height:520px;top:-310px;right:-180px}.hero:after{width:440px;height:440px;bottom:-310px;left:-130px}
+    .hero>*{position:relative;z-index:1}
+    .brand{font-size:clamp(54px,9vw,94px);line-height:1;letter-spacing:6px;font-weight:400}.hero p{max-width:520px;margin:18px auto 28px;font-size:18px}.hero .hero-subtitle{font-family:Montserrat,Arial,Helvetica,sans-serif!important;letter-spacing:.28em;font-size:clamp(19px,3vw,29px);direction:ltr;opacity:.5}.scroll{display:inline-block;border:1px solid var(--cream);border-radius:999px;padding:8px 27px;font-size:15px}
+    .since{font-family:Arial,Helvetica,sans-serif;letter-spacing:.22em;font-size:12px;margin:0 0 24px;color:var(--cream);opacity:.5;text-align:center}.hero-language{position:absolute;top:24px;right:24px;z-index:2;background:var(--cream);color:var(--maroon);border-color:var(--cream)}.hero-language:hover{background:var(--maroon);color:var(--cream);border-color:var(--cream)}
+    nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}.nav{max-width:1150px;margin:auto;padding:11px 18px;display:flex;gap:8px;justify-content:center;overflow:auto}.nav a,.language-toggle{white-space:nowrap;padding:6px 18px;border-radius:999px;color:var(--muted);font-size:15px;border:0;background:transparent;cursor:pointer}.nav a:hover,.nav a.active,.language-toggle:hover{background:var(--maroon);color:var(--cream)}.language-toggle{font-family:Arial,Helvetica,sans-serif;border:1px solid var(--maroon);color:var(--maroon);font-size:21px;line-height:1;padding:7px 11px}.hero-language{position:absolute;top:24px;right:24px;z-index:2;background:var(--cream);color:var(--maroon);border-color:var(--cream)}.hero-language:hover{background:var(--maroon);color:var(--cream);border-color:var(--cream)}
+    .menu{max-width:1150px;margin:auto;padding:70px 20px 100px}.heading{text-align:center;margin-bottom:42px}.eyebrow{color:var(--maroon);font-size:16px;letter-spacing:2px}.heading h1{font-size:clamp(38px,6vw,57px);line-height:1.2;color:var(--maroon-deep);margin-top:5px}.heading p{color:var(--muted);font-size:16px;margin-top:8px}
+    .category{scroll-margin-top:70px;margin-bottom:70px}.title{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:26px;text-align:center}.title:before,.title:after{content:"";height:1px;background:var(--line);flex:1}.title h2{font-size:clamp(32px,4vw,42px);color:var(--maroon-deep);white-space:nowrap}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 25px #59001912;transition:.25s}.card:hover{transform:translateY(-4px);box-shadow:0 18px 45px #59001920}.pic{width:100%;aspect-ratio:4/3;display:block;object-fit:cover;object-position:center;background:var(--cream)}.pic[src="images/iced-latte.jpg"]{object-fit:cover;object-position:50% 42%;background:#1b1510}.pic[src="images/cappuccino-blue-plate.jpg"]{object-position:50% 55%}.info{padding:17px 18px 19px}.top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.name{font-size:24px;font-weight:700;line-height:1.35}.price{color:var(--maroon);font-size:17px;white-space:nowrap;direction:ltr}.desc{font-size:15px;color:var(--muted);margin-top:6px}
+    footer{background:var(--maroon-deep);color:var(--cream);text-align:center;padding:48px 20px}.footer-brand{font-size:43px;letter-spacing:4px}.footer-text{font-size:15px;margin-top:7px}.copy{font-size:12px;color:#fff2d0b5;border-top:1px solid #fff2d044;margin-top:22px;padding-top:18px}
+    @media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.hero{min-height:58vh}.grid{grid-template-columns:1fr;gap:16px}.menu{padding-top:52px}.category{margin-bottom:52px}}
+    @media print{@page{size:A4;margin:12mm}body{background:#fff;color:#000;font-size:12pt}.hero{min-height:auto;padding:20mm 12mm;background:var(--maroon)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.hero:before,.hero:after,nav,.scroll{display:none}.brand{font-size:58pt}.hero p{margin:10px auto 0}.menu{padding:12mm 0}.heading{margin-bottom:12mm}.category{margin-bottom:12mm;break-inside:avoid}.grid{grid-template-columns:repeat(3,1fr);gap:6mm}.card{box-shadow:none;break-inside:avoid;border-radius:8px}.pic{aspect-ratio:3/2;font-size:28px;background:var(--cream)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.info{padding:4mm}.name{font-size:13pt}.price{font-size:14pt}.desc{font-size:10pt}footer{padding:10mm;background:var(--maroon-deep)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.footer-brand{font-size:30pt}}
+  </style>
+</head>
+<body>
+  <header class="hero" id="home"><button class="language-toggle hero-language" id="language-toggle" type="button" aria-label="Switch to English">🌐︎</button><div><div class="since" lang="en">SINCE 1991</div><div class="brand">مَخْبَز سـَدَن</div><p class="hero-subtitle" lang="en">SADAN BAKERY</p></div></header>
+  <nav><div class="nav"><a href="#pastries">المعجنات</a><a href="#sweet">الحلويات</a><a href="#coffee">الـقـهـوة</a><a href="#tea">الـشــاي</a></div></nav>
+  <main class="menu" id="menu"><div class="heading"><h1>قائمة المخبز</h1><p>اختياراتنا اليومية</p></div>
+    <section class="category" id="pastries"><div class="title"><h2>المعجنات</h2></div><div class="grid">
+      <article class="card"><img class="pic" src="images/cheese-danish-blue-plate.png" alt="كروسان بالجبن"><div class="info"><div class="top"><span class="name">كروسان بالجبن</span><span class="price">16 &#x20C1;</span></div><p class="desc">كروسان ذهبي بحشوة الجبن.</p></div></article>
+      <article class="card"><img class="pic" src="images/walnut-puff-blue-plate.jpg" alt="فطائر الجوز"><div class="info"><div class="top"><span class="name">فطائر الجوز</span><span class="price">21 &#x20C1;</span></div><p class="desc">فطائر مورقة بالجوز.</p></div></article>
+      <article class="card"><img class="pic" src="images/berry-galette.jpg" alt="فطيرة التوت"><div class="info"><div class="top"><span class="name">فطيرة التوت</span><span class="price">21 &#x20C1;</span></div><p class="desc">توت دافئ في عجينة هشة.</p></div></article>
+      <article class="card"><img class="pic" src="images/berry-danish.jpg" alt="دانش التوت"><div class="info"><div class="top"><span class="name">دانش التوت</span><span class="price">22 &#x20C1;</span></div><p class="desc">دانش مورق بتوت طازج.</p></div></article>
+      <article class="card"><img class="pic" src="images/cherry-danish.jpg" alt="دانش الكرز"><div class="info"><div class="top"><span class="name">دانش الكرز</span><span class="price">22 &#x20C1;</span></div><p class="desc">دانش مورق بحشوة الكرز.</p></div></article>
+      <article class="card"><img class="pic" src="images/portuguese-egg-tarts.png" alt="تارت البيض البرتغالي"><div class="info"><div class="top"><span class="name">تارت البيض البرتغالي</span><span class="price">20 &#x20C1;</span></div><p class="desc">تارت كريمي مخبوز طازجًا.</p></div></article>
+    </div></section>
+    <section class="category" id="sweet"><div class="title"><h2>الحلويات</h2></div><div class="grid">
+<article class="card"><img class="pic" src="images/cinnamon-roll-blue-plate.jpg" alt="سينابون"><div class="info"><div class="top"><span class="name">سينابون</span><span class="price">19 &#x20C1;</span></div><p class="desc">لفائف قرفة طازجة.</p></div></article>
+      <article class="card"><img class="pic" src="images/croissant-almond-blue-plate.png" alt="كروسان باللوز"><div class="info"><div class="top"><span class="name">كروسان باللوز</span><span class="price">17 &#x20C1;</span></div><p class="desc">كروسان هش يوميًا.</p></div></article>
+      <article class="card"><img class="pic" src="images/matcha-knot.jpg" alt="سينابون بالفستق"><div class="info"><div class="top"><span class="name">سينابون بالفستق</span><span class="price">20 &#x20C1;</span></div><p class="desc">سينابون بطبقة فستق غنية.</p></div></article>
+      <article class="card"><img class="pic" src="images/chocolate-croll.jpg" alt="كرول الشوكولاتة"><div class="info"><div class="top"><span class="name">كرول الشوكولاتة</span><span class="price">22 &#x20C1;</span></div><p class="desc">كرول محشو بالشوكولاتة.</p></div></article>
+      <article class="card"><img class="pic" src="images/chocolate-cinnamon-roll.jpg" alt="سينابون شوكولاتة"><div class="info"><div class="top"><span class="name">سينابون شوكولاتة</span><span class="price">21 &#x20C1;</span></div><p class="desc">لفائف قرفة بصوص شوكولاتة.</p></div></article>
+      <article class="card"><img class="pic" src="images/pistachio-croll.jpg" alt="كرول الفستق"><div class="info"><div class="top"><span class="name">كرول الفستق</span><span class="price">23 &#x20C1;</span></div><p class="desc">كرول بالفستق المحمص.</p></div></article>
+      <article class="card"><img class="pic" src="images/apple-tart-blue-plate.jpg" alt="تارت التفاح"><div class="info"><div class="top"><span class="name">تارت التفاح</span><span class="price">21 &#x20C1;</span></div><p class="desc">تارت تفاح دافئ وهش.</p></div></article>
+      <article class="card"><img class="pic" src="images/almond-croissant-blue-plate.webp" alt="كروسان باللوز"><div class="info"><div class="top"><span class="name">كروسان باللوز</span><span class="price">23 &#x20C1;</span></div><p class="desc">كروسان مورق برقائق اللوز.</p></div></article>
+      <article class="card"><img class="pic" src="images/pistachio-croissant-blue-plate.jpg" alt="كروسان بالفستق"><div class="info"><div class="top"><span class="name">كروسان بالفستق</span><span class="price">24 &#x20C1;</span></div><p class="desc">كروسان بحشوة الفستق.</p></div></article>
+    </div></section>
+    <section class="category" id="coffee"><div class="title"><h2>الـقـهـوة</h2></div><div class="grid">
+      <article class="card"><img class="pic" src="images/black-coffee-classic.png" alt="قهوة اليوم"><div class="info"><div class="top"><span class="name">قهوة اليوم</span><span class="price">18 &#x20C1;</span></div><p class="desc">بن مختص طازج.</p></div></article>
+      <article class="card"><img class="pic" src="images/black-coffee-folder.jpg" alt="قهوة سوداء"><div class="info"><div class="top"><span class="name">قهوة سوداء</span><span class="price">14 &#x20C1;</span></div><p class="desc">قهوة سوداء طازجة.</p></div></article>
+      <article class="card"><img class="pic" src="images/cappuccino-blue-plate.jpg" alt="لاتيه"><div class="info"><div class="top"><span class="name">لاتيه</span><span class="price">19 &#x20C1;</span></div><p class="desc">إسبريسو بحليب مخملي.</p></div></article>
+      <article class="card"><img class="pic" src="images/espresso-blue-plate.jpeg" alt="إسبريسو"><div class="info"><div class="top"><span class="name">إسبريسو</span><span class="price">14 &#x20C1;</span></div><p class="desc">إسبريسو مركز وغني.</p></div></article>
+      <article class="card"><img class="pic" src="images/iced-coffee-blue-plate.png" alt="لاتيه بارد"><div class="info"><div class="top"><span class="name">لاتيه بارد</span><span class="price">18 &#x20C1;</span></div><p class="desc">لاتيه بارد ومنعش.</p></div></article>
+      <article class="card"><img class="pic" src="images/latte-blue-plate.png" alt="فلات وايت"><div class="info"><div class="top"><span class="name">فلات وايت</span><span class="price">18 &#x20C1;</span></div><p class="desc">قهوة ناعمة برغوة حليب خفيفة.</p></div></article>
+    </div></section>
+    <section class="category" id="tea"><div class="title"><h2>الـشــاي</h2></div><div class="grid">
+      <article class="card"><img class="pic" src="images/plain-tea-blue-plate.png" alt="شاي سادة"><div class="info"><div class="top"><span class="name">شاي سادة</span><span class="price">14 &#x20C1;</span></div><p class="desc">شاي أسود دافئ وبسيط.</p></div></article>
+      <article class="card"><img class="pic" src="images/mint-tea-blue-plate.png" alt="شاي بالنعناع"><div class="info"><div class="top"><span class="name">شاي بالنعناع</span><span class="price">16 &#x20C1;</span></div><p class="desc">شاي بنعناع طازج.</p></div></article>
+      <article class="card"><img class="pic" src="images/green-tea-blue-plate.png" alt="شاهي أخضر"><div class="info"><div class="top"><span class="name">شاهي أخضر</span><span class="price">16 &#x20C1;</span></div><p class="desc">شاهي أخضر منعش بأوراق طازجة.</p></div></article>
+    </div></section>
+  </main>
+  <footer><div class="footer-brand" lang="en">SADAN</div><div class="footer-text">شكراً لزيارتكم</div><div class="copy">© 2026 SADAN — جميع الحقوق محفوظة</div></footer>
+  <script>
+    const sections=document.querySelectorAll('.category'),links=document.querySelectorAll('.nav a');
+    const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(x=>x.classList.remove('active'));const a=document.querySelector('.nav a[href="#'+e.target.id+'"]');if(a)a.classList.add('active')}}),{rootMargin:'-25% 0px -60% 0px'});sections.forEach(s=>obs.observe(s));
+    const translations={
+      ar:{dir:'rtl',buttonLabel:'Switch to English',brand:'مَخْبَز سـَدَن',hero:'SADAN BAKERY',menu:'المنيو',intro:'طِب وتخيَّر',categories:['المعجنات','الحلويات','الـقـهـوة','الـشــاي'],nav:['المعجنات','الحلويات','الـقـهـوة','الـشــاي'],names:['فطيرة الجبن','كرواسون شوكولاتة','معجنات سدان','سينابون','فطائر الجوز','كرواسون','فطيرة الماتشا','كرول الشوكولاتة','فطيرة التوت','سينابون شوكولاتة','دانش التوت','كرول الفستق','دانش الكرز','قهوة اليوم','سبانيش لاتيه','آيس سبانيش لاتيه','آيس لاتيه','في 60','قهوة سوداء','قهوة مثلجة','لاتيه','كابتشينو','شاي بالنعناع','شاي أسود'],descs:['فطيرة جبن ذهبية.','كرواسون بشوكولاتة غنية.','مخبوزات سدان اليومية.','لفائف قرفة طازجة.','فطائر مورقة بالجوز.','كرواسون هش يوميًا.','فطيرة مورقة بلمسة ماتشا.','كرول محشو بالشوكولاتة.','توت دافئ في عجينة هشة.','لفائف قرفة بصوص شوكولاتة.','دانش مورق بتوت طازج.','كرول بالفستق المحمص.','دانش مورق بحشوة الكرز.','بن مختص طازج.','إسبريسو وحليب مكثف.','لاتيه بارد كريمي.','لاتيه بارد كريمي ومنعش.','قهوة مقطرة يدويًا.','قهوة سوداء طازجة.','قهوة باردة ومنعشة.','إسبريسو بحليب مخملي.','قهوة ناعمة برغوة الحليب.','شاي بنعناع طازج.','شاي كلاسيكي متوازن.'],prices:['16 \u20C1','19 \u20C1','18 \u20C1','19 \u20C1','21 \u20C1','17 \u20C1','20 \u20C1','22 \u20C1','21 \u20C1','21 \u20C1','22 \u20C1','23 \u20C1','22 \u20C1','18 \u20C1','20 \u20C1','22 \u20C1','20 \u20C1','22 \u20C1','14 \u20C1','18 \u20C1','19 \u20C1','18 \u20C1','16 \u20C1','14 \u20C1'],footer:'شكراً لزيارتكم',copyright:'© 2026 SADAN — جميع الحقوق محفوظة',title:'Sadan Bakery'},
+      en:{dir:'ltr',buttonLabel:'التبديل إلى العربية',brand:'مَخْبَز سـَدَن',hero:'SADAN BAKERY',menu:'Menu',intro:'Our daily selections',categories:['Pastries','Sweets','Coffee','Tea'],nav:['Pastries','Sweets','Coffee','Tea'],names:['Cheese Pastry','Chocolate Croissant','SADAN Pastries','Cinnamon Roll','Walnut Puff Pastries','Croissant','Matcha Pastry','Chocolate Croll','Berry Galette','Chocolate Cinnamon Roll','Berry Danish','Pistachio Croll','Cherry Danish','Coffee of the Day','Spanish Latte','Iced Spanish Latte','Iced Latte','V60','Black Coffee','Iced Coffee','Latte','Cappuccino','Mint Tea','Black Tea'],descs:['Golden cheese pastry.','Flaky chocolate layers.','Fresh daily pastries.','Warm cinnamon roll.','Flaky pastries with walnut.','Fresh, crisp croissant.','Flaky pastry with matcha.','A chocolate-filled croll.','Warm berries in flaky pastry.','Cinnamon roll with chocolate.','Flaky Danish with fresh berries.','A croll with roasted pistachio.','Flaky Danish with cherry filling.','Fresh specialty coffee.','Espresso with condensed milk.','Creamy iced Spanish Latte.','Creamy, refreshing iced latte.','Hand-poured coffee.','Freshly brewed black coffee.','Refreshing chilled coffee.','Espresso with velvety milk.','Smooth coffee with milk foam.','Fresh mint tea.','Balanced classic tea.'],prices:['SAR 16','SAR 19','SAR 18','SAR 19','SAR 21','SAR 17','SAR 20','SAR 21','SAR 21','SAR 21','SAR 22','SAR 23','SAR 22','SAR 18','SAR 20','SAR 22','SAR 20','SAR 22','SAR 14','SAR 18','SAR 19','SAR 18','SAR 16','SAR 14'],footer:'Thank you for visiting',copyright:'© 2026 SADAN — All rights reserved',title:'Sadan Bakery'}
+    };
+    translations.ar.names.splice(13,0,'تارت البيض البرتغالي');
+    translations.ar.descs.splice(13,0,'تارت كريمي مخبوز طازجًا.');
+    translations.ar.prices.splice(13,0,'20 \u20C1');
+    translations.en.names.splice(13,0,'Portuguese Egg Tart');
+    translations.en.descs.splice(13,0,'Freshly baked creamy tart.');
+    translations.en.prices.splice(13,0,'SAR 20');
+    translations.ar.names.splice(14,0,'تارت التفاح');
+    translations.ar.descs.splice(14,0,'تارت تفاح دافئ وهش.');
+    translations.ar.prices.splice(14,0,'21 \u20C1');
+    translations.en.names.splice(14,0,'Apple Tart');
+    translations.en.descs.splice(14,0,'Warm, crisp apple tart.');
+    translations.en.prices.splice(14,0,'SAR 21');
+    translations.ar.names.splice(16,0,'إسبريسو');
+    translations.ar.descs.splice(16,0,'إسبريسو مركز وغني.');
+    translations.ar.prices.splice(16,0,'14 \u20C1');
+    translations.en.names.splice(16,0,'Espresso');
+    translations.en.descs.splice(16,0,'Rich, concentrated espresso.');
+    translations.en.prices.splice(16,0,'SAR 14');
+    for(const t of [translations.ar,translations.en]){
+      [26,20,19,18,17,2,1].forEach(i=>{t.names.splice(i,1);t.descs.splice(i,1);t.prices.splice(i,1)});
+    }
+    translations.ar.names[18]='فلات وايت';
+    translations.ar.descs[18]='قهوة ناعمة برغوة حليب خفيفة.';
+    translations.ar.names[3]='كروسان';
+    translations.ar.descs[3]='كروسان هش يوميًا.';
+    translations.en.names[18]='Flat White';
+    translations.en.descs[18]='Smooth espresso with silky milk.';
+    translations.ar.names.push('شاي سادة');
+    translations.ar.descs.push('شاي أسود دافئ وبسيط.');
+    translations.ar.prices.push('14 \u20C1');
+    translations.en.names.push('Plain Tea');
+    translations.en.descs.push('Simple, warming black tea.');
+    translations.en.prices.push('SAR 14');
+    translations.ar.names.splice(13,0,'كرواسون اللوز','كرواسون الفستق');
+    translations.ar.descs.splice(13,0,'كرواسون مورق برقائق اللوز.','كرواسون بحشوة الفستق.');
+    translations.ar.prices.splice(13,0,'23 \u20C1','24 \u20C1');
+    translations.en.names.splice(13,0,'Almond Croissant','Pistachio Croissant');
+    translations.en.descs.splice(13,0,'Flaky croissant with almond flakes.','Croissant with pistachio filling.');
+    translations.en.prices.splice(13,0,'SAR 23','SAR 24');
+    Object.assign(translations.ar.names,{15:'قهوة اليوم',16:'قهوة سوداء',17:'لاتيه',18:'إسبريسو',19:'لاتيه بارد',20:'فلات وايت'});
+    Object.assign(translations.ar.descs,{15:'بن مختص طازج.',16:'قهوة سوداء طازجة.',17:'إسبريسو بحليب مخملي.',18:'إسبريسو مركز وغني.',19:'لاتيه بارد ومنعش.',20:'قهوة ناعمة برغوة حليب خفيفة.'});
+    Object.assign(translations.ar.prices,{15:'18 \u20C1',16:'14 \u20C1',17:'19 \u20C1',18:'14 \u20C1',19:'18 \u20C1',20:'18 \u20C1'});
+    Object.assign(translations.en.names,{15:'Coffee of the Day',16:'Black Coffee',17:'Latte',18:'Espresso',19:'Iced Latte',20:'Flat White'});
+    Object.assign(translations.en.descs,{15:'Fresh specialty coffee.',16:'Freshly brewed black coffee.',17:'Espresso with velvety milk.',18:'Rich, concentrated espresso.',19:'Refreshing iced latte.',20:'Smooth espresso with silky milk.'});
+    Object.assign(translations.en.prices,{15:'SAR 18',16:'SAR 14',17:'SAR 19',18:'SAR 14',19:'SAR 18',20:'SAR 18'});
+    Object.assign(translations.ar.names,{0:'كروسان بالجبن',3:'كروسان باللوز',13:'كروسان باللوز',14:'كروسان بالفستق'});
+    Object.assign(translations.ar.descs,{0:'كروسان ذهبي بحشوة الجبن.',3:'كروسان هش يوميًا.',13:'كروسان مورق برقائق اللوز.',14:'كروسان بحشوة الفستق.'});
+    translations.ar.names=['كروسان بالجبن','فطائر الجوز','فطيرة التوت','دانش التوت','دانش الكرز','تارت البيض البرتغالي','سينابون','كروسان باللوز','سينابون بالفستق','كرول الشوكولاتة','سينابون شوكولاتة','كرول الفستق','تارت التفاح','كروسان باللوز','كروسان بالفستق','قهوة اليوم','قهوة سوداء','لاتيه','إسبريسو','لاتيه بارد','فلات وايت','شاي سادة','شاي بالنعناع','شاهي أخضر'];
+    translations.ar.descs=['كروسان ذهبي بحشوة الجبن.','فطائر مورقة بالجوز.','توت دافئ في عجينة هشة.','دانش مورق بتوت طازج.','دانش مورق بحشوة الكرز.','تارت كريمي مخبوز طازجًا.','لفائف قرفة طازجة.','كروسان هش يوميًا.','سينابون بطبقة فستق غنية.','كرول محشو بالشوكولاتة.','لفائف قرفة بصوص شوكولاتة.','كرول بالفستق المحمص.','تارت تفاح دافئ وهش.','كروسان مورق برقائق اللوز.','كروسان بحشوة الفستق.','بن مختص طازج.','قهوة سوداء طازجة.','إسبريسو بحليب مخملي.','إسبريسو مركز وغني.','لاتيه بارد ومنعش.','قهوة ناعمة برغوة حليب خفيفة.','شاي أسود دافئ وبسيط.','شاي بنعناع طازج.','شاهي أخضر منعش بأوراق طازجة.'];
+    translations.ar.prices=['16 \u20C1','21 \u20C1','21 \u20C1','22 \u20C1','22 \u20C1','20 \u20C1','19 \u20C1','17 \u20C1','20 \u20C1','22 \u20C1','21 \u20C1','23 \u20C1','21 \u20C1','23 \u20C1','24 \u20C1','18 \u20C1','14 \u20C1','19 \u20C1','14 \u20C1','18 \u20C1','18 \u20C1','14 \u20C1','16 \u20C1','16 \u20C1'];
+    translations.en.names=['Cheese Croissant','Walnut Puff Pastries','Berry Galette','Berry Danish','Cherry Danish','Portuguese Egg Tart','Cinnamon Roll','Almond Croissant','Pistachio Cinnamon Roll','Chocolate Croll','Chocolate Cinnamon Roll','Pistachio Croll','Apple Tart','Almond Croissant','Pistachio Croissant','Coffee of the Day','Black Coffee','Latte','Espresso','Iced Latte','Flat White','Plain Tea','Mint Tea','Green Tea'];
+    translations.en.descs=['Golden croissant with cheese filling.','Flaky pastries with walnut.','Warm berries in flaky pastry.','Flaky Danish with fresh berries.','Flaky Danish with cherry filling.','Freshly baked creamy tart.','Warm cinnamon roll.','Fresh, crisp croissant.','Cinnamon roll with rich pistachio.','A chocolate-filled croll.','Cinnamon roll with chocolate.','A croll with roasted pistachio.','Warm, crisp apple tart.','Flaky croissant with almond flakes.','Croissant with pistachio filling.','Fresh specialty coffee.','Freshly brewed black coffee.','Espresso with velvety milk.','Rich, concentrated espresso.','Refreshing iced latte.','Smooth espresso with silky milk.','Simple, warming black tea.','Fresh mint tea.','Refreshing green tea with fresh leaves.'];
+    translations.en.prices=['SAR 16','SAR 21','SAR 21','SAR 22','SAR 22','SAR 20','SAR 19','SAR 17','SAR 20','SAR 22','SAR 21','SAR 23','SAR 21','SAR 23','SAR 24','SAR 18','SAR 14','SAR 19','SAR 14','SAR 18','SAR 18','SAR 14','SAR 16','SAR 16'];
+    let language='ar';
+    const put=(selector,values)=>document.querySelectorAll(selector).forEach((el,i)=>el.textContent=values[i]);
+    function setLanguage(next){const t=translations[next];language=next;document.documentElement.lang=next;document.documentElement.dir=t.dir;document.title=t.title;document.querySelector('.brand').textContent=t.brand;document.querySelector('.hero-subtitle').textContent=t.hero;document.querySelector('.heading h1').textContent=t.menu;document.querySelector('.heading p').textContent=t.intro;put('.nav a',t.nav);put('.title h2',t.categories);put('.name',t.names);put('.desc',t.descs);document.querySelectorAll('.price').forEach((el,i)=>{if(next==='ar'){el.textContent=t.prices[i].replace('\u20C1','').trim()+' ';const symbol=document.createElement('span');symbol.className='riyal-symbol';symbol.setAttribute('aria-label','Saudi riyal');symbol.textContent='\u20C1';el.append(symbol)}else el.textContent=t.prices[i]});document.querySelector('.footer-text').textContent=t.footer;document.querySelector('.copy').textContent=t.copyright;const button=document.querySelector('#language-toggle');button.textContent='🌐︎';button.setAttribute('aria-label',t.buttonLabel)}
+    document.querySelector('#language-toggle').addEventListener('click',()=>setLanguage(language==='ar'?'en':'ar'));
+    setLanguage('ar');
+  </script>
+</body>
+</html>
